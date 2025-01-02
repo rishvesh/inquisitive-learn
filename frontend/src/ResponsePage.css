@@ -1,0 +1,98 @@
+.q1 {
+    background-color: rgba(157, 157, 157, 0.458);
+    padding: 15px;
+    width: 30%;
+    display: inline-block; /* For multiple cards per row */
+    margin: 20px;
+    transition: background-color 0.3s, transform 0.3s, height 0.3s ease;
+    font-family: raleway;
+    font-size: 16pt;
+    overflow: hidden;
+    position: relative;
+    /* height: 100px;  Let React manage the height */
+}
+
+@font-face {
+    font-family: raleway;
+    src: url(../src/static/FuturaBookfont.ttf);
+}
+
+.q1:hover {
+    background-color: #bab7ca;
+    transform: scale(1.05);
+}
+
+.question, .answer {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    transition: opacity 0.3s ease;
+}
+
+.answer {
+    opacity: 0;
+}
+
+.add-to-folder {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    background-color: #22516c;
+    transform: translateX(-50%);
+    width: calc(100% - 30px); /* Adjusted width */
+    opacity: 0;
+    transition: opacity 0.3s ease, background-color 0.3s;
+}
+
+.q1:hover .add-to-folder {
+    opacity: 1;
+}
+
+#folderPopup {
+    display: none;
+    position: absolute;
+    background-color: white; /* Ensure a solid background */
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: opacity 0.3s, transform 0.3s;
+    opacity: 0;
+    transform: translateY(-10px);
+    z-index: 10; /* Make sure it's above the card */
+}
+
+#folderPopup.show {
+    opacity: 1;
+    transform: translateY(0);
+    display: block;
+}
+
+.folder-btn {
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.folder-btn:hover {
+    transform: scale(1.05);
+}
+
+#newFolderForm {
+    transition: max-height 0.3s, opacity 0.3s;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+#newFolderForm.show {
+    max-height: 150px;
+    opacity: 1;
+}
+
+.form-check {
+    transition: opacity 0.3s;
+    opacity: 0;
+}
+
+#newFolderForm.show .form-check {
+    opacity: 1;
+}
