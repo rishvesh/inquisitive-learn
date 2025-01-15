@@ -4,7 +4,7 @@ from flask import Flask, request, render_template, jsonify
 
 app = Flask(__name__)
 
-GOOGLE_API_KEY = "AIzaSyAPZT1PjHhbnI7rO5Wt-XeUzTpplgmg1cU"  # Replace with your actual API key
+GOOGLE_API_KEY = ""  # Replace with your actual API key
 
 def promptLLM(model_name, prompt):
     genai.configure(api_key=GOOGLE_API_KEY)
